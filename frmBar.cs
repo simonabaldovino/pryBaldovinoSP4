@@ -16,5 +16,14 @@ namespace pryBaldovinoSP4
         {
             InitializeComponent();
         }
+
+        private void frmBar_Load(object sender, EventArgs e)
+        {
+            dgvVentas.Rows.Add("Julio");
+            dgvVentas.Rows.Add("Esteban");
+            dgvVentas.Rows.Add("Javier");
+            dgvVentas.Rows.Add("Gonzalo");
+            dgvVentas.Rows.Add("Alberto");
+        }
     }
 }
