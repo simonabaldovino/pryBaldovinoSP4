@@ -35,16 +35,23 @@
             colBebidaSinAlcohol = new DataGridViewTextBoxColumn();
             colBebidaConAlcohol = new DataGridViewTextBoxColumn();
             colPostres = new DataGridViewTextBoxColumn();
+            btnValidar = new Button();
+            btnMozo = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvVentas).BeginInit();
             SuspendLayout();
             // 
             // dgvVentas
             // 
+            dgvVentas.AllowUserToAddRows = false;
+            dgvVentas.AllowUserToDeleteRows = false;
+            dgvVentas.AllowUserToResizeColumns = false;
+            dgvVentas.AllowUserToResizeRows = false;
             dgvVentas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvVentas.Columns.AddRange(new DataGridViewColumn[] { colMozo, colComida, colBebidaSinAlcohol, colBebidaConAlcohol, colPostres });
             dgvVentas.Location = new Point(32, 30);
             dgvVentas.Name = "dgvVentas";
-            dgvVentas.Size = new Size(544, 348);
+            dgvVentas.RowHeadersVisible = false;
+            dgvVentas.Size = new Size(503, 171);
             dgvVentas.TabIndex = 0;
             // 
             // colMozo
@@ -72,14 +79,36 @@
             colPostres.HeaderText = "Postres";
             colPostres.Name = "colPostres";
             // 
+            // btnValidar
+            // 
+            btnValidar.Location = new Point(413, 224);
+            btnValidar.Name = "btnValidar";
+            btnValidar.Size = new Size(122, 28);
+            btnValidar.TabIndex = 1;
+            btnValidar.Text = "Validar Datos";
+            btnValidar.UseVisualStyleBackColor = true;
+            btnValidar.Click += btnValidar_Click;
+            // 
+            // btnMozo
+            // 
+            btnMozo.Location = new Point(32, 313);
+            btnMozo.Name = "btnMozo";
+            btnMozo.Size = new Size(122, 28);
+            btnMozo.TabIndex = 2;
+            btnMozo.Text = "Mozo del día";
+            btnMozo.UseVisualStyleBackColor = true;
+            // 
             // frmBar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(684, 450);
+            ClientSize = new Size(573, 434);
+            Controls.Add(btnMozo);
+            Controls.Add(btnValidar);
             Controls.Add(dgvVentas);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmBar";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Bar La Milanga -Registro de ventas diarias";
             Load += frmBar_Load;
             ((System.ComponentModel.ISupportInitialize)dgvVentas).EndInit();
@@ -94,5 +123,7 @@
         private DataGridViewTextBoxColumn colBebidaSinAlcohol;
         private DataGridViewTextBoxColumn colBebidaConAlcohol;
         private DataGridViewTextBoxColumn colPostres;
+        private Button btnValidar;
+        private Button btnMozo;
     }
 }
